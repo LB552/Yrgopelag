@@ -10,13 +10,19 @@
 <body>
     <div class="dateWall">
         <?php for ($i=0; $i<5; $i++) {
-            ?> <div class="date"></div>
+            ?>
             <div class="hori">
-            <?php for ($j=0; $j<6; $j++) {
+            <?php for ($j=0; $j<7; $j++) {
                 ?> <div class="date"></div> <?php
             }
             ?> </div> <?php
         }?>
+    </div>
+    <p>Select room/class:</p>
+    <div class="hori">
+    <div class="roomClass">Budget</div>
+    <div class="roomClass">Standard</div>
+    <div class="roomClass">Luxury</div>
     </div>
     <input class="usernameInput" placeholder="Username"></input>
     <input class="tranferCodeInput" placeholder="transferCode"></input>

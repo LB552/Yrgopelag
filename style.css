@@ -28,7 +28,13 @@ body {
     margin: 5px;
     background-color: palevioletred;
 }
+
 .hori {
     display: flex;
     flex-direction: row;
+}
+
+.roomClass {
+    border: 2px solid lightcoral;
+    margin: 5px;
 }
