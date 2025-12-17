@@ -1,3 +1,7 @@
+<?php
+require __DIR__ . '/header.html';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +14,6 @@
 
 <body>
     <div class="mainHeroImage"></div>
-    <p class="logo">Hotel</p>
-    <div class="stars">*****</div>
     <h1>Revered hotel</h1>
     <div class="toBooking"><a href="booking.php">Book a room</a></div>
 </body>

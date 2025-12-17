@@ -23,10 +23,19 @@ body {
 }
 
 .date {
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     margin: 5px;
-    background-color: palevioletred;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dullDate {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    background-color: transparent;
 }
 
 .hori {
@@ -37,4 +46,7 @@ body {
 .roomClass {
     border: 2px solid lightcoral;
     margin: 5px;
+}
+.roomClass.clicked {
+    background-color: goldenrod;
 }
