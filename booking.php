@@ -18,20 +18,25 @@ require __DIR__ . '/header.html';
     <div class="dateWall">
         <?php
         $day = 1;
-        for ($i = 0; $i < 5; $i++) { ?>
+        for ($i = 0; $i < 6; $i++) { ?>
             <div class="hori">
                 <?php for ($j = 0; $j < 7; $j++) {
 
                     $class = 'date';
                     $content = '';
 
+                    // Days (mon-sun)
+                    if ($i === 0) {
+                        $class = 'dayDate';
+                    }
+
                     // First 3 squares on top row
-                    if ($i === 0 && $j < 3) {
+                    if ($i === 1 && $j < 3) {
                         $class = 'dullDate';
                     }
 
                     // Last square on bottom row
-                    if ($i === 4 && $j === 6) {
+                    if ($i === 5 && $j === 6) {
                         $class = 'dullDate';
                     }
 
@@ -39,6 +44,12 @@ require __DIR__ . '/header.html';
                     if ($class === 'date' && $day <= 31) {
                         $content = $day;
                         $day++;
+                    }
+
+                    // Put days (mon-sun)
+                    $weekday = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+                    if ($class === 'dayDate' && $i === 0) {
+                        $content = $weekday[$j];
                     }
                 ?>
                     <div class="<?= $class ?>"><?= $content ?></div>

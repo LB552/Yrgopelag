@@ -37,6 +37,12 @@ body {
     margin: 5px;
     background-color: transparent;
 }
+.dayDate {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    background-color: transparent;
+}
 
 .hori {
     display: flex;
