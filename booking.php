@@ -15,7 +15,8 @@
 
 <body>
     <div class="hori">
-        <div class="dateWall">
+        <div id="economyCalendar" class="dateWall">
+            <h3>Economy</h3>
             <?php
             $day = 1;
             for ($i = 0; $i < 6; $i++) { ?>
@@ -57,7 +58,8 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="dateWall">
+        <div id="standardCalendar" class="dateWall">
+            <h3>Standard</h3>
             <?php
             $day = 1;
             for ($i = 0; $i < 6; $i++) { ?>
@@ -99,7 +101,8 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="dateWall">
+        <div id="luxuryCalendar" class="dateWall">
+            <h3>Luxury</h3>
             <?php
             $day = 1;
             for ($i = 0; $i < 6; $i++) { ?>
@@ -143,8 +146,8 @@
         </div>
     </div>
 
-    <label for="room-select">Select room/class:</label>
-    <select name="room" id="room-select">
+    <label for="roomSelect">Select room/class:</label>
+    <select name="room" id="roomSelect">
         <option value="1">economy</option>
         <option value="2">standard</option>
         <option value="3">luxury</option>

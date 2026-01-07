@@ -49,3 +49,28 @@ function highlightRange() {
         }
     });
 }
+
+const calendar_select = document.getElementById("roomSelect");
+const economyCal = document.getElementById("economyCalendar");
+const standardCal = document.getElementById("standardCalendar");
+const luxuryCal = document.getElementById("luxuryCalendar");
+
+// Default state
+economyCal.classList.add("calendarBorder");
+calendar_select.value = "1";
+
+calendar_select.addEventListener("change", function () {
+    // Remove border from both divs
+    economyCal.classList.remove("calendarBorder");
+    standardCal.classList.remove("calendarBorder");
+    luxuryCal.classList.remove("calendarBorder");
+
+    // Add border to selected div
+    if (this.value === "1") {
+      economyCal.classList.add("calendarBorder");
+    } else if (this.value === "2") {
+      standardCal.classList.add("calendarBorder");
+    } else if (this.value === "3") {
+      luxuryCal.classList.add("calendarBorder");
+    }
+  });
