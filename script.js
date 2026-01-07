@@ -1,20 +1,3 @@
-const roomClasses = document.querySelectorAll('.roomClass');
-
-roomClasses.forEach(room => {
-    room.addEventListener('click', () => {
-        const isAlreadySelected = room.classList.contains('clicked');
-
-        // Remove selection from all
-        roomClasses.forEach(r => r.classList.remove('clicked'));
-
-        // If it wasn't selected before, select it
-        if (!isAlreadySelected) {
-            room.classList.add('clicked');
-        }
-        // else: clicking the same one leaves none selected
-    });
-});
-
 function updateDay(inputDate, outputNumber) {
     const input = document.getElementById(inputDate);
     const output = document.getElementById(outputNumber);
@@ -30,7 +13,6 @@ function updateDay(inputDate, outputNumber) {
         highlightRange(); // call after updating
     });
 }
-
 
 // Attach event listeners to both inputs
 updateDay("fromDate", "fromInt");

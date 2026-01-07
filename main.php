@@ -1,6 +1,7 @@
-<?php
-require __DIR__ . '/header.html';
-?>
+<header>
+    <a class="logo" href="main.php">Revered</a>
+    <div class="stars">*star count*</div>
+</header>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -48,11 +48,3 @@ body {
     display: flex;
     flex-direction: row;
 }
-
-.roomClass {
-    border: 2px solid lightcoral;
-    margin: 5px;
-}
-.roomClass.clicked {
-    background-color: goldenrod;
-}
