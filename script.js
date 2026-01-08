@@ -11,6 +11,10 @@ function updateDay(inputDate, outputNumber) {
             output.textContent = "--"; // no date selected
         }
         highlightRange(); // call after updating
+        calculatePrice();
+        document.getElementById("yahtzee").addEventListener("change", calculatePrice);
+document.getElementById("bicycle").addEventListener("change", calculatePrice);
+
     });
 }
 
@@ -78,4 +82,45 @@ calendar_select.addEventListener("change", function () {
     }
 
     highlightRange(); // ← reapply to active calendar
+    calculatePrice();
 });
+
+function calculatePrice() {
+    const roomValue = document.getElementById("roomSelect").value;
+
+    // Room prices
+    let roomPrice = 0;
+    if (roomValue === "1") roomPrice = 2;      // economy
+    else if (roomValue === "2") roomPrice = 3; // standard
+    else if (roomValue === "3") roomPrice = 4; // luxury
+
+    // Get days
+    const fromDay = parseInt(document.getElementById("fromInt").textContent, 10);
+    const toDay = parseInt(document.getElementById("toInt").textContent, 10);
+
+    let nights = 0;
+    if (!isNaN(fromDay) && !isNaN(toDay) && toDay >= fromDay) {
+        nights = toDay - fromDay;
+    }
+
+    // Features
+    const yahtzee = document.getElementById("yahtzee").checked;
+    const bicycle = document.getElementById("bicycle").checked;
+
+    let featuresPrice = 0;
+    if (yahtzee && bicycle) {
+        featuresPrice = 4;
+    } else if (yahtzee) {
+        featuresPrice = 2;
+    } else if (bicycle) {
+        featuresPrice = 3;
+    }
+
+    // Final price
+    let total = 0;
+    if (nights > 0) {
+        total = roomPrice * nights + featuresPrice;
+    }
+
+    document.getElementById("price").textContent = total > 0 ? total : "--";
+}

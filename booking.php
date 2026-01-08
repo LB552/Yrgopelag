@@ -167,8 +167,11 @@
     </div>
     <div class="hori">
         <input type="checkbox" id="bicycle">
-        <label for="bicycle">Bicycle (5 credits)</label>
+        <label for="bicycle">Bicycle (3 credits)</label>
     </div>
+    <p>Special offer: Buy both Yahtzee and bicycle for 4 credits (save 1 credit)</p>
+
+    <p>Your price: <span id="price">--</span> credits</p>
 
     <input class="usernameInput" placeholder="Username"></input>
     <input class="tranferCodeInput" placeholder="transferCode"></input>
