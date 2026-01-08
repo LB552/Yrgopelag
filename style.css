@@ -8,18 +8,8 @@ body {
     align-items: center;
 }
 
-.mainHeroImage {
-    background-color: lightblue;
-    width: 100vw;
-    height: 40vw;
-}
-
 .logo {
     font-family: 'Courier New';
-}
-
-.toBooking {
-    border: 5px solid lightsalmon;
 }
 
 .date {

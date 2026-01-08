@@ -18,37 +18,42 @@ function updateDay(inputDate, outputNumber) {
 updateDay("fromDate", "fromInt");
 updateDay("toDate", "toInt");
 
+function clearAllDateHighlights() {
+    document.querySelectorAll('.date').forEach(dateDiv => {
+        dateDiv.style.border = 'none';
+    });
+}
+
+
 function highlightRange() {
-    const fromDayText = document.getElementById('fromInt').textContent;
-    const toDayText = document.getElementById('toInt').textContent;
+    const fromDay = parseInt(document.getElementById('fromInt').textContent, 10);
+    const toDay = parseInt(document.getElementById('toInt').textContent, 10);
 
-    const fromDay = parseInt(fromDayText, 10);
-    const toDay = parseInt(toDayText, 10);
+    // Clear highlights everywhere first
+    clearAllDateHighlights();
 
-    const dates = document.querySelectorAll('.date');
+    const activeCalendar = document.querySelector('.dateWall.calendarBorder');
+    if (!activeCalendar) return;
+
+    const dates = activeCalendar.querySelectorAll('.date');
 
     dates.forEach(dateDiv => {
         const day = parseInt(dateDiv.textContent, 10);
-
-        // Reset color first
-        dateDiv.style.border = 'none';
-
-        if (isNaN(day)) return; // skip invalid divs
+        if (isNaN(day)) return;
 
         if (!isNaN(fromDay) && !isNaN(toDay)) {
-            // Both dates selected → highlight range
             if (day >= fromDay && day <= toDay) {
                 dateDiv.style.border = '3px solid goldenrod';
             }
-        } else if (!isNaN(fromDay)) {
-            // Only fromDay selected → highlight that day
-            if (day === fromDay) dateDiv.style.border = '3px solid goldenrod';
-        } else if (!isNaN(toDay)) {
-            // Only toDay selected → highlight that day
-            if (day === toDay) dateDiv.style.border = '3px solid goldenrod';
+        } else if (!isNaN(fromDay) && day === fromDay) {
+            dateDiv.style.border = '3px solid goldenrod';
+        } else if (!isNaN(toDay) && day === toDay) {
+            dateDiv.style.border = '3px solid goldenrod';
         }
     });
 }
+
+
 
 const calendar_select = document.getElementById("roomSelect");
 const economyCal = document.getElementById("economyCalendar");
@@ -60,17 +65,17 @@ economyCal.classList.add("calendarBorder");
 calendar_select.value = "1";
 
 calendar_select.addEventListener("change", function () {
-    // Remove border from both divs
     economyCal.classList.remove("calendarBorder");
     standardCal.classList.remove("calendarBorder");
     luxuryCal.classList.remove("calendarBorder");
 
-    // Add border to selected div
     if (this.value === "1") {
-      economyCal.classList.add("calendarBorder");
+        economyCal.classList.add("calendarBorder");
     } else if (this.value === "2") {
-      standardCal.classList.add("calendarBorder");
+        standardCal.classList.add("calendarBorder");
     } else if (this.value === "3") {
-      luxuryCal.classList.add("calendarBorder");
+        luxuryCal.classList.add("calendarBorder");
     }
-  });
+
+    highlightRange(); // ← reapply to active calendar
+});

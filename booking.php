@@ -160,6 +160,16 @@
     <p>From day: <span id="fromInt">--</span></p>
     <p>To day: <span id="toInt">--</span></p>
 
+    <p>Features:</p>
+    <div class="hori">
+        <input type="checkbox" id="yahtzee">
+        <label for="yahtzee">Yahtzee (2 credits)</label>
+    </div>
+    <div class="hori">
+        <input type="checkbox" id="bicycle">
+        <label for="bicycle">Bicycle (5 credits)</label>
+    </div>
+
     <input class="usernameInput" placeholder="Username"></input>
     <input class="tranferCodeInput" placeholder="transferCode"></input>
     <button class="submitBooking">Submit</button>
