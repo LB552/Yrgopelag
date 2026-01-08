@@ -1,3 +1,32 @@
+<?php
+$featureGrid = [
+    'water' => [
+        'economy' => 'pool',
+        'basic' => 'scuba diving',
+        'premium' => 'olympic pool',
+        'superior' => 'waterpark with fire and minibar'
+    ],
+    'games' => [
+        'economy' => 'yahtzee',
+        'basic' => 'ping pong table',
+        'premium' => 'PS5',
+        'superior' => 'casino'
+    ],
+    'wheels' => [
+        'economy' => 'unicycle',
+        'basic' => 'bicycle',
+        'premium' => 'trike',
+        'superior' => 'four-wheeled motorized beast'
+    ],
+    'hotel-specific' => [
+        'economy' => 'custom-1',
+        'basic' => 'custom-2',
+        'premium' => 'custom-3',
+        'superior' => 'custom-4'
+    ],
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +39,8 @@
 </head>
 <header>
     <a class="logo">Revered</a>
-    <div class="stars">*star count*</div>
+    <p id="stars">*</p>
+
 </header>
 
 <body>
@@ -173,8 +203,8 @@
 
     <p>Your price: <span id="price">--</span> credits</p>
 
-    <input class="usernameInput" placeholder="Username"></input>
-    <input class="tranferCodeInput" placeholder="transferCode"></input>
+    <input id="usernameInput" placeholder="Username">
+    <input id="transferCodeInput" placeholder="transferCode">
     <button class="submitBooking">Submit</button>
 
     <script src="script.js"></script>
