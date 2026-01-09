@@ -1,15 +1,16 @@
 <?php
+header("Content-Type: application/json");
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// 1. Read JSON from JS (SAFE)
+$raw = file_get_contents("php://input");
+$data = json_decode($raw, true);
 
-header("Content-Type: application/json");
-
-// 1. Read JSON from JS
-$data = json_decode(file_get_contents("php://input"), true);
-
-if (!$data) {
+if (json_last_error() !== JSON_ERROR_NONE) {
+    http_response_code(400);
     echo json_encode(["error" => "Invalid JSON"]);
     exit;
 }
