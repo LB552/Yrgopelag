@@ -24,8 +24,8 @@ $toDate       = $data["to_date"];
 // 3. Connect to MySQL (PDO)
 $host = "localhost";
 $dbname = "ch1v08l2m_awborndb";
-$user = "YOUR_MYSQL_USER";
-$pass = "YOUR_MYSQL_PASSWORD";
+$user = "ch1v08l2m_awborndb";
+$pass = "JSB4M4KYe";
 
 
 
