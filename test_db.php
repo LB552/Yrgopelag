@@ -4,14 +4,17 @@ ini_set('display_errors', 1);
 
 echo "PHP is running<br>";
 
+$host = "localhost"; // or "mysqlXX.one.com"
+$dbname = "ch1v08l2m_awborndb";
+$user = "ch1v08l2m_awborndb";
+$pass = "JSB4M4KYe";
+
 try {
     $db = new PDO(
-        "mysql:host=localhost;dbname=ch1v08l2m_awborndb;charset=utf8mb4",
-        "ch1v08l2m_awborndb",
-        "JSB4M4KYe",
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]
+        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+        $user,
+        $pass,
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
     echo "MySQL connection OK";
 } catch (PDOException $e) {
