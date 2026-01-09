@@ -7,8 +7,8 @@ echo "PHP is running<br>";
 try {
     $db = new PDO(
         "mysql:host=localhost;dbname=ch1v08l2m_awborndb;charset=utf8mb4",
-        "YOUR_MYSQL_USER",
-        "YOUR_MYSQL_PASSWORD",
+        "ch1v08l2m_awborndb",
+        "JSB4M4KYe",
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]
